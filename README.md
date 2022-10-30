@@ -46,7 +46,7 @@ Etune Shared Compendium is a mod that synchronizes several Foundry Instances thr
    
    ![image](https://user-images.githubusercontent.com/25609497/198892480-fa760643-ffd8-48bd-bb43-773719eaaa83.png)
    
-   The first one is the upload *button* and the second one is the *download* button. Press the download button to get the last changes.
+   The first one is the upload **button** and the second one is the **download** button. Press the download button to get the last changes.
    
 4. You should find a new compendium called `Etune actors`.
 
@@ -61,3 +61,8 @@ Etune Shared Compendium is a mod that synchronizes several Foundry Instances thr
    ![image](https://user-images.githubusercontent.com/25609497/198893140-bf459e62-0db5-4740-8a72-9f1b34225cd2.png)
 
 7. Play your session as usual but with the newly imported character. 
+8. At the end of your session just open again the compendium `Etune actors`, delete the actor from the compendium and add the actor that you used for this session to the compendium.
+9. Then push the upload button:
+
+   ![image](https://user-images.githubusercontent.com/25609497/198893777-4b8906a6-183e-45a2-bc0c-167d3f5c355f.png)
+
