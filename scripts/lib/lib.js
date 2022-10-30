@@ -26,7 +26,7 @@ class EtuneSharedCompendium {
                 button: true,
                 visible: true,
                 onClick: () => {
-                    EtuneSharedCompendiumLogic._callServerPull();
+                    EtuneSharedCompendiumLogic._callServerPush();
                     ui.notifications.info(game.i18n.format("EtuneSharedCompendium.NotificationPush"));
                 }
             },

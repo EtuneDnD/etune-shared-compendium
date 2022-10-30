@@ -17,15 +17,12 @@ function _run(command) {
 }
 
 app.get('/push', async function (req, res) {
-    _run("git stash");
-    _run("git pull");
-    _run('git stash pop');
-    _run('git add -A');
-    _run('git commit -m "Etune commit"');
-    _run('git push');
+    console.log("push");
+    _run('git stash && git pull && git stash pop && git add -A && git commit -m "Etune commit" && git push');
 });
 
 app.get('/pull', async function (req, res) {
+    console.log("pull");
     _run("git pull");
 });
 
