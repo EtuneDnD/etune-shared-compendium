@@ -35,8 +35,8 @@
     {
       "name": "actors",
       "label": "Etune actors",
-      "path": "packs/actors.db",
-      "module": "etune-shared-sompendium",
+      "path": "etune-shared-compendium-db/actors.db",
+      "module": "etune-shared-compendium",
       "entity": "Actor"
     }
   ]
