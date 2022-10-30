@@ -1,0 +1,8 @@
+git-server/
+languages/
+scripts/
+styles/
+templates/
+etune-shared-compendium.lock
+module.json
+README.md
