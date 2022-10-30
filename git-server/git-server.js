@@ -17,13 +17,12 @@ function _run(command) {
 }
 
 app.get('/push', async function (req, res) {
-    _run('git pull && git add -A && git commit -m "Etune commit" && git push');
+    _run('cd .. && cd packs && git pull && git add -A && git commit -m "Etune commit" && git push');
 });
 
 app.get('/pull', async function (req, res) {
-    _run("git pull");
+    _run("cd .. && cd packs && git pull");
 });
-
 
 app.listen(3000, function () {
     console.log('Listening on port 3000!');
