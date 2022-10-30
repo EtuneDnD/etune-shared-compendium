@@ -25,4 +25,39 @@ Etune Shared Compendium is a mod that synchronizes several Foundry Instances thr
         * `/home/$USER/FoundryVTT/Data/modules`
         * `/local/FoundryVTT/Data/modules`
 
-> WARNING: You should unzip it into a folder called etune-shared-compendium
+> WARNING: You should unzip it always inside a folder
+
+![image](https://user-images.githubusercontent.com/25609497/198891881-d4776fa7-c78b-4de9-837d-ed73cf004add.png)
+
+# How to use this mod
+1. Start the Git Server by going into the `etune-shared-compendium` module folder placed in the modules folder described in step 2 and double click on:
+   * `start-git-server.bat` if you are on Windows
+   * `start-git-server.sh` if you are on MacOS or Linux
+   
+   A terminal will appear, don't close it, this is the server, just ignore it.
+   
+2. Activate the mod in your FoundryVTT as any normal mod.
+
+3. Now this icon should appear:
+   
+   ![image](https://user-images.githubusercontent.com/25609497/198892295-343de5ea-c3d1-4e9c-9b75-75e314f1141c.png)
+   
+   If you click on this icon a sub menu will appear with 2 more icons:
+   
+   ![image](https://user-images.githubusercontent.com/25609497/198892480-fa760643-ffd8-48bd-bb43-773719eaaa83.png)
+   
+   The first one is the upload *button* and the second one is the *download* button. Press the download button to get the last changes.
+   
+4. You should find a new compendium called `Etune actors`.
+
+   ![image](https://user-images.githubusercontent.com/25609497/198892572-7eb01621-7ce6-43d6-b8b4-c9695d9094e3.png)
+   
+5. Open the compendium and import the desired actor to your world:
+   
+   ![image](https://user-images.githubusercontent.com/25609497/198893049-b76c60d1-fe48-4593-b68b-c376c80b3533.png)
+   
+6. Now it should already exist under your Actors tab:
+   
+   ![image](https://user-images.githubusercontent.com/25609497/198893140-bf459e62-0db5-4740-8a72-9f1b34225cd2.png)
+
+7. Play your session as usual but with the newly imported character. 
