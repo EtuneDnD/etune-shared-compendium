@@ -1,5 +1,3 @@
-
-
 class EtuneSharedCompendium {
     static ID = 'etune-shared-compendium';
 
@@ -11,9 +9,7 @@ class EtuneSharedCompendium {
         }
     }
 
-    static _getSceneControlButtons(buttons) {
-        console.log("adad102eijc")
-        
+    static _getSceneControlButtons(buttons) {        
 		if (!game.user.isGM) return;
         
         buttons.push({
@@ -30,7 +26,8 @@ class EtuneSharedCompendium {
                 button: true,
                 visible: true,
                 onClick: () => {
-                    console.log("aherioaheioh");
+                    EtuneSharedCompendiumLogic._callServerPull();
+                    ui.notifications.info(game.i18n.format("EtuneSharedCompendium.NotificationPush"));
                 }
             },
             {
@@ -40,20 +37,23 @@ class EtuneSharedCompendium {
                 button: true,
                 visible: true,
                 onClick: () => {
-                    console.log("aherioaheioh");
+                    EtuneSharedCompendiumLogic._callServerPull();
+                    ui.notifications.info(game.i18n.format("EtuneSharedCompendium.NotificationPull"));
                 }
             }
             ]
         });
-        
-        console.log("adad102eijc")
     }
 
 }
 
 class EtuneSharedCompendiumLogic {
-    static async _callServer() {
-        const response = await fetch('http://localhost:3000');
+    static async _callServerPush() {
+        const response = await fetch('http://localhost:3000/push');
+    }
+
+    static async _callServerPull() {
+        const response = await fetch('http://localhost:3000/pull');
     }
 }
 

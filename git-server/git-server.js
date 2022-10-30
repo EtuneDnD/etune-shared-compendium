@@ -3,7 +3,7 @@ const { exec } = require("child_process");
 
 var app = express();
 
-function run(command) {
+function _run(command) {
     return new Promise((resolve, reject) => {
         exec(command, (error, stdout, stderr) => {
             if (error) {
@@ -16,9 +16,19 @@ function run(command) {
     });
 }
 
-app.get('/', async function (req, res) {
-    console.log("Hola")
+app.get('/push', async function (req, res) {
+    _run("git stash");
+    _run("git pull");
+    _run('git stash pop');
+    _run('git add -A');
+    _run('git commit -m "Etune commit"');
+    _run('git push');
 });
+
+app.get('/pull', async function (req, res) {
+    _run("git pull");
+});
+
 
 app.listen(3000, function () {
     console.log('Listening on port 3000!');
