@@ -49,7 +49,7 @@ class EtuneSharedCompendium {
 
 class EtuneSharedCompendiumLogic {
     static async _callServerPush() {
-        const response = await fetch('http://localhost:3000/push');
+        const response = await fetch('http://localhost:3000/pushs');
     }
 
     static async _callServerPull() {
