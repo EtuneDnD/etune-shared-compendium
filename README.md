@@ -19,3 +19,10 @@ Etune Shared Compendium is a mod that synchronizes several Foundry Instances thr
 
 2. Once the zip is downloaded unzip it into your modules folder in your Foundry Data Folder.
     * Default Windows folder location `%localappdata%/FoundryVTT/Data/modules` (Press WIN + R and paste this path, then press enter)
+    * Default MacOS folder location `~/Library/Application Support/FoundryVTT/Data/modules`
+    * Default Linux folder locations:
+        * `/home/$USER/.local/share/FoundryVTT/Data/modules`
+        * `/home/$USER/FoundryVTT/Data/modules`
+        * `/local/FoundryVTT/Data/modules`
+
+> WARNING: You should unzip it into a folder called etune-shared-compendium
