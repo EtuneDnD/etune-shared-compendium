@@ -1,1 +1,1 @@
-pyinstaller --onefile --paths myenv\Lib\site-packages main.py
+pyinstaller --onefile --paths myenv\Lib\site-packages --icon=etune-icon.ico --name Etune main.py
