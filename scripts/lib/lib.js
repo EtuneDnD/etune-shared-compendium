@@ -9,7 +9,7 @@ class EtuneSharedCompendium {
         }
     }
 
-    static _getSceneControlButtons(buttons) {        
+    /* static _getSceneControlButtons(buttons) {        
 		if (!game.user.isGM) return;
         
         buttons.push({
@@ -43,18 +43,24 @@ class EtuneSharedCompendium {
             }
             ]
         });
+    } */
+
+    static _inject(compendium, html) {        
+		if (!game.user.isGM) return;
+        console.log(html.find(`[class="window-title"]`))
     }
 
 }
 
 class EtuneSharedCompendiumLogic {
     static async _callServerPush() {
-        const response = await fetch('http://localhost:3000/push');
+        const response = await fetch('http://127.0.0.1:8000/push');
     }
 
     static async _callServerPull() {
-        const response = await fetch('http://localhost:3000/pull');
+        const response = await fetch('http://localhost:8000/pull');
     }
 }
 
-Hooks.on('getSceneControlButtons', EtuneSharedCompendium._getSceneControlButtons);
+/* Hooks.on('getSceneControlButtons', EtuneSharedCompendium._getSceneControlButtons); */
+Hooks.on('renderCompendium', EtuneSharedCompendium._inject)
