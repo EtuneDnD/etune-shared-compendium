@@ -4248,7 +4248,7 @@ class EtuneSharedCompendium {
             }
         );
     }
-    
+    // Actor.deleteDocuments(["et87x2QPO6nSkYCZ"], {pack: "etune-shared-compendium.actors"})
 }
 
 class EtuneSharedCompendiumLogic {
