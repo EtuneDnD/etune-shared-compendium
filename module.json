@@ -35,7 +35,7 @@
     {
       "name": "actors",
       "label": "Etune actors",
-      "path": "etune-shared-compendium-db/actors.db",
+      "path": "etune-shared-compendium-foundry/actors.db",
       "module": "etune-shared-compendium",
       "entity": "Actor"
     }

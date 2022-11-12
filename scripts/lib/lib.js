@@ -14,19 +14,11 @@ class EtuneSharedCompendium {
         if (compendium.title != "Etune actors") return;
         buttons.unshift(
             {
-                "label": "Pull from Etune",
-                "class": "text",
-                "icon": "fas fa-download",
-                "onclick": async () => {
-                    await pull();
-                }
-            },
-            {
                 "label": "Push to Etune",
                 "class": "text",
                 "icon": "fas fa-upload",
                 "onclick": async () => {
-                    await push();
+                    await EtuneSharedCompendiumLogic.push();
                 }
             }
         );
@@ -38,10 +30,6 @@ class EtuneSharedCompendium {
 class EtuneSharedCompendiumLogic {
     static ACTORS_COMPENDIUM_NAME = 'etune-shared-compendium.actors';
 
-    static async _callServerPush() {
-        const response = await fetch('http://127.0.0.1:8000/push');
-    }
-
     static async _callServerPull() {
         const response = await fetch('http://localhost:8000/pull');
         console.log(response);
@@ -49,17 +37,23 @@ class EtuneSharedCompendiumLogic {
 
     static async pull() {
         this._deleteSharedCompendiumData(this.ACTORS_COMPENDIUM_NAME);
-        const actors = await _getActorsFromGithub();
+        const actors = await this._getActorsFromGithub();
         this._populateSharedCompendium(actors, this.ACTORS_COMPENDIUM_NAME);
     }
 
     static async push() {
-        const actors = _getDataFromCompendiumAsJson(this.ACTORS_COMPENDIUM_NAME);
-        await actors.forEach(async element => await _httpPostCallToGitServer(element));
+        await this._cleanDb();
+        const actors = await this._getDataFromCompendium(this.ACTORS_COMPENDIUM_NAME);
+        await actors.forEach(async element => await this._httpPostCallToGitServer(await element));
+        await this._callServerPush();
     }
 
-    static async _getDataFromCompendiumAsJson(compendiumName) {
-        const pack = game.packs.get(compendiumName);
+    static async _cleanDb() {
+        await fetch('http://localhost:8000/clean');
+    }
+
+    static async _getDataFromCompendium(compendiumName) {
+        const pack = await game.packs.get(compendiumName);
         return await pack.index.map(async i => await pack.getDocument(i._id));
     }
 
@@ -76,10 +70,7 @@ class EtuneSharedCompendiumLogic {
         redirect: 'follow'
         };
 
-        fetch("http://127.0.0.1:8000/push", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+        await fetch("http://127.0.0.1:8000/write", requestOptions)
     }
 
     static async _getActorsFromGithub() {
@@ -88,6 +79,10 @@ class EtuneSharedCompendiumLogic {
         const lines = text.split(/\r?\n/);
 
         return lines;
+    }
+
+    static async _callServerPush() {
+        const response = await fetch('http://127.0.0.1:8000/push');
     }
 
     static async _deleteSharedCompendiumData(compendiumName) {
