@@ -15,8 +15,8 @@
     "verified": 10,
     "maximum": 10
   },
-  "scripts": [
-    "scripts/lib/lib.js"
+  "esmodules": [
+    "/scripts/init.mjs"
   ],
   "languages": [
     {
@@ -31,7 +31,7 @@
       "label": "Etune actors",
       "path": "etune-shared-compendium-foundry/actors.db",
       "module": "etune-shared-compendium-mod",
-      "entity": "Actor",
+      "type": "Actor",
       "system": "dnd5e"
     }
   ]

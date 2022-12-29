@@ -1,7 +1,7 @@
 # etune-shared-compendium
 
 # What is etune-shared-compendium?
-Etune Shared Compendium is a mod that synchronizes several Foundry Instances through a Git Repository. Thought for communities with several Dungeon Masters to share always the latest updated changes of their players' characters sheet.
+Etune Shared Compendium is a mod that synchronizes several Foundry Instances through a Git Repository. Thought for communities with several Dungeon Masters to share always the latest updated changes of their players' characters sheet.s
 
 # Pre-Requisites
 1. You need will a GitHub account as you will need permissions to upload changes to the repo/database.
